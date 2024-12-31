@@ -1,0 +1,27 @@
+Spring:
+  application:
+    name: product-service
+
+  datasource:
+    url: jdbc:h2:mem:testdb   # Use an in-memory H2 database
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+ 
+  h2:
+    console:
+      enabled: true         # Enables H2 console for web access (optional)
+      path: /h2-console      # Path for accessing the console (default is /h2-console)
+  jpa:
+    hibernate:
+      ddl-auto: update      # Automatically update database schema, can be: create, update, validate, none
+    show-sql: true          # Show SQL queries in the console (optional)
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        format_sql: true
+
+#http://localhost:8200/h2-console
+
+server:
+  port: 8200
